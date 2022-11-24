@@ -8,12 +8,12 @@ class MovieSlider extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 250,
-      color: Colors.red,
+      //color: Colors.red,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(10),
             child: Text(
               "Populares",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
@@ -42,14 +42,28 @@ class _MoviePoster extends StatelessWidget {
       margin: const EdgeInsets.all(5),
       height: 130,
       width: 90,
-      color: Colors.green,
+      //color: Colors.green,
       child: Column(
-        children: const [
-          FadeInImage(
-              placeholder: AssetImage('assets/no-image.jpg'),
-              image: NetworkImage("https://via.placeholder.com/300x400"),
-              fit: BoxFit.cover),
-          Text("Satr_Wars")
+        children: [
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, 'details'),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: const FadeInImage(
+                  placeholder: AssetImage('assets/no-image.jpg'),
+                  image: NetworkImage("https://via.placeholder.com/300x400"),
+                  fit: BoxFit.cover),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const Text(
+            "Satr_Wars: El jedai de monte cristo, nblal, bla bla, bla",
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+          )
         ],
       ),
     );
