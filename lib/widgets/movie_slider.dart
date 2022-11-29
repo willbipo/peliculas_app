@@ -38,10 +38,6 @@ class _MoviePoster extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var hds = <String, String>{
-      "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
-    };
     return Container(
       margin: const EdgeInsets.all(5),
       height: 130,
@@ -56,8 +52,7 @@ class _MoviePoster extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               child: FadeInImage(
                   placeholder: AssetImage('assets/no-image.jpg'),
-                  image: NetworkImage("https://via.placeholder.com/300x400",
-                      headers: hds),
+                  image: AssetImage('assets/no-image.jpg'),
                   fit: BoxFit.cover),
             ),
           ),
